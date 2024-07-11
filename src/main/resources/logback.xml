@@ -1,0 +1,44 @@
+<configuration>
+   <conversionRule conversionWord="customColor"
+                   converterClass="com.kennlly.project.utils.CustomLogHighlightingColor"/>
+
+   <property name="LOG_DIR" value="logs/"/>
+
+   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+      <withjansi>true</withjansi>
+      <encoder>
+         <pattern>[%d{YYYY-MM-dd HH:mm:ss.SSS}][%thread] %customColor([%-5level]) %green([%logger{36}]) - %msg %n
+         </pattern>
+      </encoder>
+   </appender>
+
+   <timestamp key="timestamp" datePattern="YYYY-MM-dd"/>
+   <appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+      <file>${LOG_DIR}${timestamp}.log</file>
+
+      <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+         <fileNamePattern>logs/archived/%d{YYYY-MM-dd}.%i.log.gz</fileNamePattern>
+         <!-- each archived file, size max 10MB -->
+         <maxFileSize>10MB</maxFileSize>
+         <!-- total size of all archive files, if total size > 10GB, it will delete old archived file -->
+         <totalSizeCap>10GB</totalSizeCap>
+         <!-- 90 days to keep -->
+         <maxHistory>90</maxHistory>
+      </rollingPolicy>
+
+      <encoder>
+         <pattern>[%d{YYYY-MM-dd HH:mm:ss.SSS}][%thread] [%-5level] [%logger{36}] - %msg %n</pattern>
+      </encoder>
+   </appender>
+
+   <logger name="com.kennlly.project" level="ERROR" additivity="false">
+      <appender-ref ref="STDOUT"/>
+   </logger>
+   <logger name="com.kennlly.project" level="ERROR" additivity="false">
+      <appender-ref ref="FILE-ROLLING"/>
+   </logger>
+
+   <root level="ERROR">
+      <appender-ref ref="STDOUT"/>
+   </root>
+</configuration>
