@@ -13,7 +13,10 @@ public class Application {
    public static void main(String[] args) {
       SpringApplication.run(Application.class, args);
 
-      log.info("Application started successfully!");
+      log.debug("Logging Debug");
+      log.info("Logging Info");
+      log.warn("Logging Warn");
+      log.error("Logging Error");
    }
 
 }
