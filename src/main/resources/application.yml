@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: Code_Storage_Java_Project
+  main:
+    banner-mode: OFF
+  profiles:
+    active: local
+
+server:
+  port: 8081

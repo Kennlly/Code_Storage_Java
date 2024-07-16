@@ -1,4 +1,4 @@
-package com.kennlly.project.utils;
+package com.kennlly.project.util;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.spi.ILoggingEvent;
@@ -6,7 +6,7 @@ import ch.qos.logback.core.pattern.color.ANSIConstants;
 import ch.qos.logback.core.pattern.color.ForegroundCompositeConverterBase;
 
 
-public class CustomLogColors extends ForegroundCompositeConverterBase<ILoggingEvent> {
+public class CustomLogColor extends ForegroundCompositeConverterBase<ILoggingEvent> {
 
    @Override
    protected String getForegroundColorCode(ILoggingEvent event) {

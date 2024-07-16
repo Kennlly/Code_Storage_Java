@@ -1,0 +1,11 @@
+genesys:
+  tokenUrl: https://login.cac1.pure.cloud
+  apiUrl: https://api.cac1.pure.cloud
+  clientId: 6c90eb67-0fb7-4d72-bf78-24a124c04e9f
+  clientSecret: DNHmUETCcplN8bb7o5CLDPWDrhRXaIHDfp8YzzwlL98
+db:
+  database: GenesysAPI_LCL
+  server: localhost
+  user: sa
+  port: 1433
+  password:

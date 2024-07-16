@@ -2,7 +2,7 @@
    <statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
 
    <conversionRule conversionWord="customColor"
-                   converterClass="com.kennlly.project.utils.CustomLogColors"/>
+                   converterClass="com.kennlly.project.util.CustomLogColor"/>
 
    <property name="LOG_DIR" value="logs/"/>
 
